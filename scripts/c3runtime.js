@@ -4040,9 +4040,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Exps.random,
 		C3.Plugins.Arr.Exps.IndexOf,
 		C3.Plugins.Arr.Acts.Push,
-		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.Sprite.Exps.X,
-		C3.Plugins.Sprite.Exps.Y,
 		C3.Behaviors.Rotate.Acts.SetSpeed,
 		C3.Plugins.Arr.Exps.Front,
 		C3.Plugins.Sprite.Acts.SetAnim,
@@ -4054,9 +4051,12 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.Arr.Acts.Pop,
+		C3.Plugins.Sprite.Exps.Y,
 		C3.Behaviors.MoveTo.Cnds.OnArrived,
 		C3.Plugins.Sprite.Acts.SetAngle,
-		C3.Plugins.Sprite.Cnds.CompareFrame
+		C3.Plugins.Sprite.Cnds.CompareFrame,
+		C3.Plugins.Sprite.Acts.SetPos,
+		C3.Plugins.Sprite.Exps.X
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4249,15 +4249,7 @@ self.C3_ExpressionFuncs = [
 		},
 		p => {
 			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 50);
-		},
-		p => {
-			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => (n0.ExpObject() + 60);
 		},
 		() => 960,
 		() => 540,
@@ -4271,6 +4263,7 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "seslendir",
 		() => 1.5,
+		() => 3.5,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpInstVar();
@@ -4287,6 +4280,14 @@ self.C3_ExpressionFuncs = [
 		() => 120,
 		() => 180,
 		() => 300,
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 50);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			return () => (n0.ExpObject() + 60);
+		},
 		() => "teb"
 ];
 
